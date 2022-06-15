@@ -1,9 +1,9 @@
-package training.maven.quick;
-
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class ApplicationTest {
     private Application app;
@@ -23,25 +23,25 @@ public class ApplicationTest {
     @Test
     public void testWordCountEmpty() {
         int count = app.countWords("");
-        assertTrue(count == 0);
+        assertEquals(0, count);
     }
 
     @Test
     public void testWordCountNull() {
         int count = app.countWords(null);
-        assertTrue(count == 0);
+        assertEquals(0, count);
     }
 
     @Test
     @Ignore
     public void testWordCountMore() {
         int count = app.countWords("this will be skipped");
-        assertTrue(count == 3);
+        assertEquals(3, count);
     }
 
     @Test
     public void testWordCountSingle() {
         int count = app.countWords("test");
-        assertTrue(count == 1);
+        assertEquals(1, count);
     }
 }
